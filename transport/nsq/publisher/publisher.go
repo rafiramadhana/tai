@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bookstore/model"
 	"encoding/json"
 	"log"
-	"tai"
 
 	"github.com/nsqio/go-nsq"
 )
@@ -15,10 +15,9 @@ func main() {
 		log.Panic(err)
 	}
 	// err = p.Publish("My_NSQ_Topic", []byte("sample NSQ message"))
-	b, err := json.Marshal(tai.Book{
-		ID:     "1",
-		Name:   "Filosofi Teras",
-		Author: "Henry Manampiring",
+	b, err := json.Marshal(model.Book{
+		ID:   "1",
+		Name: "Filosofi Teras",
 	})
 	if err != nil {
 		log.Panic(err)

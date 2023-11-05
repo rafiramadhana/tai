@@ -1,14 +1,15 @@
 # tai
 
-In `tai`, we are having a ~~CRUD~~ book store app with flexible transport and infrastructure code implementations.
+In `tai`, we are having a ~~CRUD~~ model.Book store app with flexible transport and infrastructure code implementations.
 
 Transport:
 
-- [x] NSQ
-- [ ] gRPC
-- [ ] REST
+- CLI
+- NSQ
+- etc
 
 Infrastructure:
 
-- [ ] MySQL
-- [ ] SQLite
+- In Memory
+- SQLite
+- etc

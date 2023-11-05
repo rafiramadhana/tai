@@ -1,11 +1,11 @@
 package main
 
 import (
+	"bookstore/model"
 	"encoding/json"
 	"fmt"
 	"log"
 	"sync"
-	"tai"
 
 	"github.com/nsqio/go-nsq"
 )
@@ -24,14 +24,13 @@ func main() {
 	c.AddHandler(nsq.HandlerFunc(func(message *nsq.Message) error {
 		log.Println("NSQ message received:")
 		// log.Println(string(message.Body))
-		b := tai.Book{}
+		b := model.Book{}
 		err := json.Unmarshal(message.Body, &b)
 		if err != nil {
 			log.Panic(err)
 		}
 		fmt.Println("id:", b.ID)
 		fmt.Println("name:", b.Name)
-		fmt.Println("author:", b.Author)
 		return nil
 	}))
 
